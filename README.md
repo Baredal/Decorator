@@ -1,0 +1,7 @@
+### Decorator <br>
+Зчитує зображення на гугл клауд через google vision OCR та записує до бази даних <br>
+SmartDocument створює запит до OCR <br>
+CachedDocument перевіряє чи є текст в базі даних і повертає його, якщо ні - викликає SmartDocument і записує текст до бази даних <br>
+TimedDocument створяє екземляр CachedDocument і робить заміри часу <br>
+(це потрібно для того, щоб коректно працювало викликання декораторів в обох напрямках CachedDocument(TimedDocument) <br>
+і TimedDocument(CachedDocument) 
