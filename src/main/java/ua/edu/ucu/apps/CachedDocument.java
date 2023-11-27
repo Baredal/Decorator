@@ -35,7 +35,6 @@ public class CachedDocument implements Document {
             return "Reading from database:\n\n"
             + resultSet.getString("document_text");
         }
-        else {
         String documentText = document.parse();
         String queryWrite = "INSERT INTO documents (gcs_path, document_text) VALUES (?, ?)";
         PreparedStatement preparedStatementWrite = connection.prepareStatement(queryWrite);
@@ -44,6 +43,6 @@ public class CachedDocument implements Document {
         preparedStatementWrite.executeUpdate();
 
         return documentText;
-        }
+        
     }
 }
