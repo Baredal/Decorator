@@ -32,8 +32,7 @@ public class CachedDocument implements Document {
         preparedStatementFind.setString(1, gcsPath);
         ResultSet resultSet = preparedStatementFind.executeQuery();
         if (resultSet.next()) {
-            return "Reading from database:\n\n"
-            + resultSet.getString("document_text");
+            resultSet.getString("document_text");
         }
         String documentText = document.parse();
         String queryWrite = "INSERT INTO documents (gcs_path, document_text) VALUES (?, ?)";
