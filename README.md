@@ -4,4 +4,5 @@ SmartDocument створює запит до OCR <br>
 CachedDocument викликає TimedDocument, якщо спочатку він був TimedDocument і перевіряє чи є текст в базі даних і повертає його, якщо ні - викликає SmartDocument і записує текст до бази даних <br>
 TimedDocument створяє екземляр CachedDocument (якщо він таким не є) і робить заміри часу <br>
 Це потрібно для того, щоб коректно працювало викликання декораторів в обох напрямках CachedDocument(TimedDocument) <br>
-і TimedDocument(CachedDocument) 
+і TimedDocument(CachedDocument) <br>
+P.S. Все працює правильно, якщо подивитись на час читання (приблизно 2 сек з гуглом, 0.06 сек з бази даних)
